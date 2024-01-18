@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Hack Tools</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="js/clipboard.js" defer></script>
+</head>
+<body>
+    <div id="generator-container">
+        <h2>Google hack</h2>
+        <label for="siteInput">输入“site”名称 (e.g., example.com): </label>
+        <input type="text" id="siteInput" placeholder="example.com">
+        <button onclick="generateGoogleHacks()">生成</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateGoogleHacks() {
+            var siteName = document.getElementById("siteInput").value;
+            
+            if (siteName.trim() === "") {
+                alert("Please enter a site name.");
+                return;
+            }
+
+            var template1 = 'inurl:php?id= site:' + siteName;
+            var template2 = 'inurl:Login site:' + siteName;
+            var template3 = 'inurl:Template3 site:' + siteName;
+            var template4 = 'inurl:Template4 site:' + siteName;
+            var template5 = 'inurl:Template5 site:' + siteName;
+            var template6 = 'inurl:Template6 site:' + siteName;
+            var template7 = 'inurl:Template7 site:' + siteName;
+            var template8 = 'inurl:Template8 site:' + siteName;
+
+            var resultHTML = `
+                <div class="result-block">
+                    <div class="copy-notification" id="notification1">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template1}', 'notification1')">Template 1</h3>
+                    <p>${template1}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification2">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template2}', 'notification2')">Template 2</h3>
+                    <p>${template2}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification3">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template3}', 'notification3')">Template 3</h3>
+                    <p>${template3}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification4">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template4}', 'notification4')">Template 4</h3>
+                    <p>${template4}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification5">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template5}', 'notification5')">Template 5</h3>
+                    <p>${template5}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification6">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template6}', 'notification6')">Template 6</h3>
+                    <p>${template6}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification7">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template7}', 'notification7')">Template 7</h3>
+                    <p>${template7}</p>
+                </div>
+                <div class="result-block">
+                    <div class="copy-notification" id="notification8">Copied!</div>
+                    <h3 onclick="copyToClipboard('${template8}', 'notification8')">Template 8</h3>
+                    <p>${template8}</p>
+                </div>
+            `;
+
+            document.getElementById("result").innerHTML = resultHTML;
+        }
+    </script>
+
+    <div bottom="0">
+        <p>&copy; 2024 19xinan.cn. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
